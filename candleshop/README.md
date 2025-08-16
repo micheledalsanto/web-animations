@@ -177,10 +177,6 @@ L'animazione è ottimizzata per diversi dispositivi:
 
 Questo progetto è rilasciato sotto licenza MIT. Sentiti libero di usarlo e modificarlo per i tuoi progetti.
 
-## 👨‍💻 Autore
-
-Creato per CandleShop - E-commerce di candele artigianali
-
 ---
 
 *Illumina la tua esperienza digitale* ✨

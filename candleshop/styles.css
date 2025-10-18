@@ -1,0 +1,459 @@
+/* Reset e base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.8s ease-out;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Candela Container */
+.candle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    outline: none !important;
+    border: none !important;
+}
+
+.candle-container:hover {
+    transform: scale(1.05);
+}
+
+.candle-container:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+.candle-container:active {
+    outline: none !important;
+    border: none !important;
+    transform: scale(0.98);
+}
+
+.candle-container:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 5px;
+}
+
+/* Candela SVG */
+.candle {
+    filter: drop-shadow(0 10px 20px rgba(244, 241, 232, 0.1));
+    transition: all 0.5s ease;
+    outline: none !important;
+    border: none !important;
+}
+
+.candle:focus,
+.candle:active {
+    outline: none !important;
+    border: none !important;
+}
+
+/* Fiamma */
+.flame {
+    transform-origin: 50% 80%;
+    animation: flicker 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1) rotate(-2deg); }
+    50% { transform: scale(1.1) rotate(1deg); }
+    100% { transform: scale(0.95) rotate(-1deg); }
+}
+
+/* Bagliore */
+.glow {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+    100% { opacity: 0.3; transform: scale(1); }
+}
+
+/* Animazione di accensione */
+.candle.lighting .flame {
+    animation: ignite 0.8s ease-out forwards, flicker 1.5s ease-in-out infinite alternate 0.8s;
+}
+
+.candle.lighting .glow {
+    animation: glow-appear 0.8s ease-out forwards, pulse 2s ease-in-out infinite 0.8s;
+}
+
+@keyframes ignite {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.3) translateY(10px); 
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.3) translateY(-5px); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+    }
+}
+
+@keyframes glow-appear {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.5); 
+    }
+    100% { 
+        opacity: 0.3; 
+        transform: scale(1); 
+    }
+}
+
+/* Testo "Light me up" */
+.light-text {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 2rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+/* Overlay radiale */
+.radial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, #000 80%);
+    z-index: 999;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.radial-overlay.revealing {
+    animation: radial-reveal 1s ease-out forwards;
+}
+
+@keyframes radial-reveal {
+    0% { 
+        background: radial-gradient(circle at 50% 50%, transparent 0%, #000 5%);
+        opacity: 1;
+    }
+    25% { 
+        background: radial-gradient(circle at 50% 50%, transparent 15%, #000 25%);
+        opacity: 1;
+    }
+    50% { 
+        background: radial-gradient(circle at 50% 50%, transparent 35%, #000 45%);
+        opacity: 1;
+    }
+    75% {
+        background: radial-gradient(circle at 50% 50%, transparent 60%, #000 70%);
+        opacity: 0.8;
+    }
+    100% { 
+        background: radial-gradient(circle at 50% 50%, transparent 100%, transparent 100%);
+        opacity: 0;
+    }
+}
+
+/* Contenuto principale */
+.main-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.2s ease-out;
+}
+
+.main-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    color: #8B4513;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8B4513;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.cta-button {
+    background: #8B4513;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: #A0522D;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Products Section */
+.products {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.products h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.product-image::after {
+    content: "🕯️";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.6;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 0;
+    background: #f9f9f9;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.about p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 0;
+    background: #333;
+    color: white;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.contact p {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .candle {
+        width: 60px;
+        height: 120px;
+    }
+    
+    .light-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Effetti di fade out per la candela */
+.candle-container.fade-out {
+    animation: fadeOut 2s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    70% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% { 
+        opacity: 0; 
+        transform: scale(1.1); 
+    }
+}

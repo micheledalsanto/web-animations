@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CandleShop - Candele Profumate Artigianali</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen con Candela -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="candle-container" id="candleContainer">
+            <!-- Candela SVG -->
+            <svg class="candle" id="candle" viewBox="0 0 100 200" width="80" height="160">
+                <!-- Corpo della candela -->
+                <rect x="25" y="80" width="50" height="120" rx="2" fill="#f4f1e8" stroke="#e8e5d8" stroke-width="1"/>
+                
+                <!-- Stoppino -->
+                <line x1="50" y1="80" x2="50" y2="70" stroke="#2c2c2c" stroke-width="2" stroke-linecap="round"/>
+                
+                <!-- Fiamma (inizialmente nascosta) -->
+                <ellipse class="flame" cx="50" cy="65" rx="8" ry="15" fill="url(#flameGradient)" opacity="0"/>
+                
+                <!-- Bagliore (inizialmente nascosto) -->
+                <circle class="glow" cx="50" cy="65" r="25" fill="url(#glowGradient)" opacity="0"/>
+                
+                <!-- Gradients per fiamma e bagliore -->
+                <defs>
+                    <radialGradient id="flameGradient" cx="50%" cy="80%" r="50%">
+                        <stop offset="0%" style="stop-color:#ffeb3b;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#ff9800;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#ff5722;stop-opacity:1" />
+                    </radialGradient>
+                    
+                    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#ffeb3b;stop-opacity:0.3" />
+                        <stop offset="50%" style="stop-color:#ff9800;stop-opacity:0.1" />
+                        <stop offset="100%" style="stop-color:#ff5722;stop-opacity:0" />
+                    </radialGradient>
+                </defs>
+            </svg>
+        </div>
+        
+        <!-- Testo "Light me up" -->
+        <p class="light-text" id="lightText">Light me up</p>
+    </div>
+    
+    <!-- Overlay radiale per effetto di rivelazione -->
+    <div class="radial-overlay" id="radialOverlay"></div>
+    
+    <!-- Contenuto principale del sito -->
+    <div class="main-content" id="mainContent">
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>CandleShop</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Prodotti</a></li>
+                    <li><a href="#about">Chi Siamo</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Candele Profumate Artigianali</h1>
+                <p>Scopri la nostra collezione di candele uniche, realizzate a mano con cera naturale e fragranze selezionate</p>
+                <button class="cta-button">Scopri la Collezione</button>
+            </div>
+        </section>
+        
+        <!-- Products Section -->
+        <section class="products" id="products">
+            <div class="container">
+                <h2>Le Nostre Candele</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>Lavanda Toscana</h3>
+                        <p>Rilassante fragranza di lavanda</p>
+                        <span class="price">€24.90</span>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>Vaniglia & Cannella</h3>
+                        <p>Dolce miscela speziata</p>
+                        <span class="price">€26.90</span>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>Eucalipto Fresco</h3>
+                        <p>Energizzante aroma balsamico</p>
+                        <span class="price">€22.90</span>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>Rose & Peonia</h3>
+                        <p>Delicata fragranza floreale</p>
+                        <span class="price">€28.90</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2>La Nostra Storia</h2>
+                <p>Dal 2018 creiamo candele artigianali utilizzando solo cera di soia naturale e oli essenziali di alta qualità. Ogni candela è realizzata a mano nel nostro laboratorio in Toscana.</p>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>Contattaci</h2>
+                <p>Email: info@candleshop.it | Tel: +39 055 123 4567</p>
+            </div>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

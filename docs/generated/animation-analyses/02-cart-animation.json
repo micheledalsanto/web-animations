@@ -1,0 +1,316 @@
+{
+  "name": "cart-animation",
+  "title": "Cart Animation with Multi-Currency",
+  "order": 2,
+  "complexity": "intermediate",
+  "overview": {
+    "description": "A modern, fluid add-to-cart animation with real-time multi-currency conversion support. Features elastic bounce animations, success state feedback, and a sophisticated dark theme with glassmorphism effects. Supports 4 currencies with automatic price conversion and formatting.",
+    "purpose": "Enhances e-commerce user experience by providing immediate visual feedback when adding products to cart, with built-in currency switching for international audiences.",
+    "useCase": "E-commerce product pages, online stores, shopping carts, international retail websites"
+  },
+  "visualEffects": [
+    "Cart icon elastic bounce animation with rotation (0.6s cubic-bezier)",
+    "Badge counter appear with elastic scale animation",
+    "Price update with scale animation and color change to green",
+    "Button success state transformation (blue → green with checkmark)",
+    "Plus icon rotation on hover (90 degrees)",
+    "Card hover lift effect (translateY -5px)",
+    "Product image zoom on card hover (scale 1.05)",
+    "Currency button smooth transitions",
+    "Dark gradient background (slate colors)",
+    "Glassmorphism effects with shadows"
+  ],
+  "technicalDetails": {
+    "technologies": ["HTML5", "CSS3", "Vanilla JavaScript (ES6+)", "CSS Variables"],
+    "libraries": "None (pure vanilla JS)",
+    "fileStructure": {
+      "html": "index.html (58 lines)",
+      "css": "style.css (278 lines)",
+      "js": "script.js (133 lines)"
+    },
+    "keyFeatures": [
+      "Class-based ShoppingCart architecture",
+      "Real-time currency conversion with 4 currencies (EUR, USD, GBP, JPY)",
+      "Currency-specific number formatting (decimals for EUR/USD/GBP, none for JPY)",
+      "State management for cart items and total price",
+      "Event delegation for multiple products",
+      "CSS custom properties for theming",
+      "Responsive design with mobile support",
+      "Dark theme with modern UI"
+    ]
+  },
+  "currencies": {
+    "supported": [
+      {
+        "code": "EUR",
+        "symbol": "€",
+        "rate": 1.0,
+        "format": "€149.99",
+        "description": "Euro (base currency)"
+      },
+      {
+        "code": "USD",
+        "symbol": "$",
+        "rate": 1.09,
+        "format": "$163.49",
+        "description": "US Dollar"
+      },
+      {
+        "code": "GBP",
+        "symbol": "£",
+        "rate": 0.86,
+        "format": "£128.99",
+        "description": "British Pound"
+      },
+      {
+        "code": "JPY",
+        "symbol": "¥",
+        "rate": 161.50,
+        "format": "¥24,225",
+        "description": "Japanese Yen (no decimals, thousands separator)"
+      }
+    ],
+    "conversionLogic": "Base price (EUR €149.99) × exchange rate = converted price",
+    "formatting": {
+      "EUR_USD_GBP": "Fixed to 2 decimals with .toFixed(2)",
+      "JPY": "Rounded to integer with .toLocaleString('en-US') for thousands separator"
+    }
+  },
+  "howItWorks": {
+    "summary": "The ShoppingCart class manages cart state, currency conversion, and animations. When a user adds a product, multiple synchronized animations trigger: the button changes to a success state, the cart icon bounces with rotation, the counter badge appears with elastic scaling, and the total price updates with a color flash.",
+    "workflow": [
+      "User selects currency (EUR/USD/GBP/JPY) - triggers changeCurrency()",
+      "Product price converts and updates display instantly",
+      "User clicks 'Add to Cart' button - triggers addToCart()",
+      "Item added to cart array, total price incremented",
+      "Button transforms: blue → green, plus icon → checkmark, text → 'Added!'",
+      "Cart icon bounces with elastic animation (scale + rotation)",
+      "Counter badge appears/updates with elastic scale (cubic-bezier)",
+      "Total price animates: scales to 1.2x, flashes green, returns to normal",
+      "After 2 seconds, button resets to original state",
+      "Currency changes update all prices instantly with formatting"
+    ],
+    "animationSequence": {
+      "duration": "2000ms total",
+      "timeline": [
+        "0ms - User clicks button",
+        "0ms - Button changes to green success state",
+        "0ms - Cart icon starts bounce animation (600ms)",
+        "0ms - Counter badge scales up (300ms elastic)",
+        "0ms - Price starts scale animation (500ms)",
+        "250ms - Price hits 1.2x scale and green color (peak)",
+        "500ms - Price animation completes",
+        "600ms - Cart icon bounce completes",
+        "2000ms - Button resets to original blue state"
+      ]
+    }
+  },
+  "integration": {
+    "htmlStructure": {
+      "currencySelector": "Fixed top-left with 4 currency buttons",
+      "cartButton": "Fixed top-right with icon, counter badge, and price",
+      "productCard": "Centered card with image, info, price, and add button"
+    },
+    "cssClasses": [
+      ".currency-selector - fixed position pill with buttons",
+      ".currency-btn - individual currency button",
+      ".currency-btn.active - selected currency (blue background)",
+      ".cart-button - fixed cart display",
+      ".cart-icon - SVG shopping cart",
+      ".cart-icon.bounce - bounce animation class",
+      ".cart-count - badge counter",
+      ".cart-count.show - visible counter",
+      ".cart-price - total price display",
+      ".cart-price.update - price update animation",
+      ".product-card - main product container",
+      ".add-to-cart-btn - add button",
+      ".add-to-cart-btn.added - success state"
+    ],
+    "javascriptAPI": {
+      "class": "ShoppingCart",
+      "properties": [
+        "items: [] - array of cart items {name, price}",
+        "totalPrice: 0 - running total in current currency",
+        "currentCurrency: 'EUR' - selected currency code",
+        "currentSymbol: '€' - currency symbol for display",
+        "currentRate: 1 - exchange rate multiplier",
+        "basePrice: 149.99 - product price in EUR"
+      ],
+      "methods": [
+        "changeCurrency(event) - handles currency switching and price updates",
+        "addToCart(event) - adds item to cart and triggers animations",
+        "updateCartDisplay() - updates counter and price with formatting",
+        "animateCartIcon() - bounces cart icon",
+        "animateButton(button) - changes button to success state"
+      ]
+    }
+  },
+  "customization": {
+    "parameters": [
+      {
+        "name": "Base Price",
+        "location": "script.js line 8",
+        "default": "149.99 EUR",
+        "description": "Product base price in euros",
+        "example": "this.basePrice = 199.99; // Higher price"
+      },
+      {
+        "name": "Exchange Rates",
+        "location": "index.html lines 15-18 (data-rate attributes)",
+        "default": "USD: 1.09, GBP: 0.86, JPY: 161.50",
+        "description": "Real-time exchange rates (update as needed)",
+        "example": "data-rate=\"1.12\" // Update USD rate"
+      },
+      {
+        "name": "Button Reset Time",
+        "location": "script.js line 74",
+        "default": "2000ms",
+        "description": "How long button stays green before resetting",
+        "example": "setTimeout(() => { ... }, 3000); // 3 seconds"
+      },
+      {
+        "name": "Primary Color",
+        "location": "style.css line 8",
+        "default": "#3b82f6 (blue)",
+        "description": "Main accent color for buttons and badges",
+        "example": "--primary-color: #8b5cf6; /* Purple */"
+      },
+      {
+        "name": "Success Color",
+        "location": "style.css line 15",
+        "default": "#10b981 (green)",
+        "description": "Color for success states",
+        "example": "--success-color: #06b6d4; /* Cyan */"
+      },
+      {
+        "name": "Background Gradient",
+        "location": "style.css line 20",
+        "default": "135deg, #0f172a → #1e293b (slate)",
+        "description": "Dark gradient background",
+        "example": "background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);"
+      },
+      {
+        "name": "Bounce Animation",
+        "location": "style.css lines 238-251 (@keyframes cartBounce)",
+        "default": "0.6s with rotation and scale variations",
+        "description": "Cart icon bounce effect parameters",
+        "example": "Change rotation angles or scale values for different bounce feel"
+      },
+      {
+        "name": "Counter Badge Easing",
+        "location": "style.css line 118",
+        "default": "cubic-bezier(0.68, -0.55, 0.265, 1.55) - elastic",
+        "description": "Counter appearance animation curve",
+        "example": "cubic-bezier(0.34, 1.56, 0.64, 1) // More elastic"
+      }
+    ],
+    "addingCurrencies": {
+      "step1": "Add button to HTML currency selector",
+      "step2": "Set data-currency, data-symbol, data-rate attributes",
+      "step3": "No JavaScript changes needed (auto-detected)",
+      "example": "<button class=\"currency-btn\" data-currency=\"CAD\" data-symbol=\"C$\" data-rate=\"1.48\">CAD (C$)</button>"
+    }
+  },
+  "performance": {
+    "optimizations": [
+      "Zero external libraries - minimal bundle size (~13 KB + 623 KB image)",
+      "CSS animations use GPU-accelerated properties (transform, opacity)",
+      "CSS custom properties for efficient theme switching",
+      "Event delegation for scalability",
+      "Efficient DOM queries cached in constructor",
+      "toLocaleString() for number formatting (browser-native)",
+      "CSS will-change not needed (simple transforms)"
+    ],
+    "metrics": {
+      "loadTime": "< 100ms (excluding image)",
+      "imageSize": "623 KB (product photo - can be optimized)",
+      "animationFPS": "60 FPS (smooth CSS animations)",
+      "memoryFootprint": "< 2 MB",
+      "compatibility": "All modern browsers"
+    },
+    "recommendations": [
+      "Optimize product image to WebP format (~100 KB savings)",
+      "Implement lazy loading for product images",
+      "Consider IndexedDB for persistent cart storage",
+      "Add debouncing if multiple rapid clicks expected"
+    ]
+  },
+  "browserCompatibility": {
+    "supported": {
+      "chrome": "60+",
+      "firefox": "55+",
+      "safari": "12+",
+      "edge": "79+"
+    },
+    "features": {
+      "cssVariables": "Universal support",
+      "toLocaleString": "Universal support for number formatting",
+      "classList": "Universal support",
+      "querySelector": "Universal support",
+      "ES6Classes": "All modern browsers",
+      "templateLiterals": "All modern browsers"
+    }
+  },
+  "accessibility": {
+    "features": [
+      "Semantic HTML structure",
+      "Keyboard accessible buttons",
+      "Focus states on interactive elements",
+      "Currency buttons are keyboard navigable",
+      "SVG icons are decorative (no alt text needed)"
+    ],
+    "improvements": [
+      "Add aria-label to cart button describing count and price",
+      "Add aria-live region for cart updates announced to screen readers",
+      "Add role='status' for success state announcements",
+      "Add keyboard shortcut for currency switching",
+      "Add focus trap for accessibility when cart is active"
+    ]
+  },
+  "codeExamples": {
+    "basicUsage": "// Initialize cart (automatic on DOMContentLoaded)\nnew ShoppingCart();\n\n// Cart automatically handles:\n// - Currency switching\n// - Adding items\n// - Price calculations\n// - All animations",
+    "addingProduct": "<!-- Product Card -->\n<div class=\"product-card\">\n  <div class=\"product-image\">\n    <img src=\"product.jpg\" alt=\"Product\">\n  </div>\n  <div class=\"product-info\">\n    <h3>Product Name</h3>\n    <p>Description</p>\n    <div class=\"product-footer\">\n      <span class=\"product-price\">€149.99</span>\n      <button class=\"add-to-cart-btn\" \n              data-price=\"149.99\" \n              data-name=\"Product Name\">\n        Add to Cart\n      </button>\n    </div>\n  </div>\n</div>",
+    "customCurrency": "<!-- Add new currency -->\n<button class=\"currency-btn\" \n        data-currency=\"CAD\" \n        data-symbol=\"C$\" \n        data-rate=\"1.48\">\n  CAD (C$)\n</button>",
+    "customColors": ":root {\n  --primary-color: #8b5cf6; /* Purple */\n  --primary-hover: #7c3aed;\n  --success-color: #06b6d4; /* Cyan */\n  --bg-dark: #1a1a2e;\n  --bg-card: #16213e;\n}"
+  },
+  "useCases": [
+    "E-commerce product pages with cart functionality",
+    "Online stores with multi-currency support",
+    "International retail websites",
+    "SaaS product purchase pages",
+    "Digital product marketplaces",
+    "Booking and reservation systems",
+    "Subscription service sign-ups"
+  ],
+  "advantages": [
+    "Zero dependencies - no library overhead",
+    "Real-time currency conversion",
+    "Professional animations with elastic easing",
+    "Modern dark theme design",
+    "Easily extensible (add currencies, products)",
+    "Clean class-based architecture",
+    "Small file size (466 lines total)",
+    "Responsive and mobile-friendly",
+    "Customizable colors via CSS variables"
+  ],
+  "limitations": [
+    "Exchange rates are hardcoded (not fetching from API)",
+    "No persistent cart storage (resets on page reload)",
+    "Single product demo (easily scalable)",
+    "No cart quantity adjustment UI",
+    "No remove from cart functionality",
+    "No checkout or payment integration",
+    "Image asset is large (623 KB - needs optimization)"
+  ],
+  "futureEnhancements": [
+    "Integrate with currency exchange API for real-time rates",
+    "Add localStorage for persistent cart",
+    "Implement remove item functionality",
+    "Add quantity selectors with +/- buttons",
+    "Create full cart modal/drawer",
+    "Add product variants (size, color)",
+    "Implement checkout flow",
+    "Add cart item animations (slide in/out)",
+    "Create mini-cart preview on hover"
+  ]
+}

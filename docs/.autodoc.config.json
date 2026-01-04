@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "web-animations",
+    "description": "A collection of creative and modern web animations built with CSS and JavaScript",
+    "type": "web-animations",
+    "rootPath": "./",
+    "exclude": ["**/node_modules/**", "**/.git/**", "**/dist/**"]
+  },
+  "discovery": {
+    "technologies": "auto",
+    "animationFolders": [
+      "candleshop",
+      "cart-animation",
+      "password-reveal",
+      "touch_hero",
+      "website_hero"
+    ]
+  },
+  "extraction": {
+    "aiModel": "claude-sonnet-4.5",
+    "parallelism": 3
+  },
+  "output": {
+    "formats": ["markdown"],
+    "destination": "docs/generated"
+  },
+  "metadata": {
+    "title": "Web Animations Collection",
+    "subtitle": "Technical Documentation",
+    "version": "1.0.0",
+    "copyright": "MIT License - Free to use and modify"
+  }
+}

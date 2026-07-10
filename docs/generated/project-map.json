@@ -1,104 +1,43 @@
 {
   "project": {
-    "name": "web-animations",
-    "type": "web-animations",
-    "version": "1.0.0",
-    "generatedAt": "2025-12-17",
+    "name": "micro-interactions-lab",
+    "type": "web-animation-library",
+    "version": "3.0.0",
+    "generatedAt": "2026-07-10",
     "statistics": {
-      "totalAnimations": 5,
-      "totalFiles": 15,
-      "totalLinesOfCode": 3754,
-      "technologies": ["HTML5", "CSS3", "JavaScript ES6+", "SVG", "Three.js", "WebGL"]
+      "totalAnimations": 50,
+      "totalSourceFiles": 10,
+      "totalLinesOfCode": 1827,
+      "dependencies": 0,
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "Vanilla JavaScript",
+        "SVG",
+        "ARIA",
+        "Intersection Observer"
+      ]
     }
   },
   "animations": [
     {
-      "name": "password-reveal",
+      "name": "micro-interactions-lab",
       "order": 1,
-      "complexity": "simple",
-      "path": "password-reveal/",
+      "animationCount": 50,
+      "complexity": "simple-intermediate",
+      "path": "micro-interactions-lab/",
       "files": {
         "html": "index.html",
-        "css": "style.css",
-        "js": "script.js"
-      },
-      "statistics": {
-        "linesOfCode": 321,
-        "fileSize": "9.0 KB"
-      },
-      "technologies": ["HTML5", "CSS3", "Vanilla JavaScript"],
-      "description": "Character-by-character password reveal animation"
-    },
-    {
-      "name": "cart-animation",
-      "order": 2,
-      "complexity": "intermediate",
-      "path": "cart-animation/",
-      "files": {
-        "html": "index.html",
-        "css": "style.css",
+        "css": "styles.css",
         "js": "script.js",
-        "assets": ["blaz-erzetic-j9Vr54fl2dI-unsplash.jpg"]
+        "documentation": "README.md"
       },
       "statistics": {
-        "linesOfCode": 466,
-        "fileSize": "12.7 KB"
+        "linesOfCode": 1521,
+        "fileSize": "109.1 KB"
       },
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Multi-currency support"],
-      "description": "Add to cart animation with multi-currency conversion"
-    },
-    {
-      "name": "candleshop",
-      "order": 3,
-      "complexity": "intermediate-advanced",
-      "path": "candleshop/",
-      "files": {
-        "html": "index.html",
-        "css": "styles.css",
-        "js": "script.js"
-      },
-      "statistics": {
-        "linesOfCode": 783,
-        "fileSize": "19.7 KB"
-      },
-      "technologies": ["HTML5", "CSS3", "JavaScript", "SVG", "Intersection Observer"],
-      "description": "E-commerce opening animation with interactive SVG candle"
-    },
-    {
-      "name": "touch_hero",
-      "order": 4,
-      "complexity": "advanced",
-      "path": "touch_hero/",
-      "files": {
-        "html": "index.html",
-        "css": "styles.css",
-        "js": "main.js",
-        "assets": ["female_hand.glb", "Logo_TouchMultimedia_white.png"]
-      },
-      "statistics": {
-        "linesOfCode": 668,
-        "fileSize": "16.6 KB"
-      },
-      "technologies": ["HTML5", "CSS3", "Three.js", "WebGL", "GLTF", "Aurora effects"],
-      "description": "3D hand model hero section with aurora background effects"
-    },
-    {
-      "name": "website_hero",
-      "order": 5,
-      "complexity": "advanced",
-      "path": "website_hero/",
-      "files": {
-        "html": "index.html",
-        "css": "styles.css",
-        "js": "main.js",
-        "assets": ["models/"]
-      },
-      "statistics": {
-        "linesOfCode": 1516,
-        "fileSize": "38.1 KB"
-      },
-      "technologies": ["HTML5", "CSS3", "Three.js", "WebGL", "GLTFLoader", "Custom cursor", "Loading screen"],
-      "description": "Advanced 3D football product hero with complex WebGL scene"
+      "categories": ["Button", "Feedback", "Loading", "Text", "Spatial"],
+      "description": "A filterable, accessible collection of 50 dependency-free UI micro-interactions"
     }
   ]
 }

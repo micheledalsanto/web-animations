@@ -1,0 +1,34 @@
+{
+  "animation": {
+    "id": "micro-interactions-lab",
+    "name": "Micro-Interactions Lab",
+    "path": "micro-interactions-lab/",
+    "animationCount": 50,
+    "complexity": "simple-intermediate"
+  },
+  "files": {
+    "html": "index.html",
+    "css": "styles.css",
+    "javascript": "script.js",
+    "documentation": "README.md"
+  },
+  "categories": {
+    "button": ["Magnetic pull", "Ink ripple", "Liquid fill", "Menu morph", "Border trace", "Split label", "Depth press", "Arrow slide", "Shine sweep", "Hold progress"],
+    "feedback": ["Day / night", "Notification bell", "Heart burst", "Success morph", "Floating field", "Elastic tooltip", "Copy confirmation", "Check toggle", "Toast stack", "Rating wave"],
+    "loading": ["Skeleton wave", "Orbital loader", "Progress ring", "Audio equalizer", "Dot pulse", "Segment spinner", "Typing bubble", "Wave loader", "Conic spinner", "Step loader"],
+    "text": ["Word cascade", "Text scramble", "Letter stagger", "Gradient flow", "Typewriter", "Rolling number", "Highlight sweep", "Blur reveal", "Kinetic underline", "Word rotator"],
+    "spatial": ["Perspective tilt", "Card flip", "Spring accordion", "Cursor spotlight", "Parallax layers", "Glass glare", "Expanding dock", "CSS cube", "Stack spread", "Elastic drag"]
+  },
+  "features": [
+    "Category filters",
+    "Complete copyable integration panel on every card",
+    "Intersection Observer entrance",
+    "Individual and global replay",
+    "ARIA state management",
+    "Keyboard-visible focus",
+    "Responsive grid",
+    "prefers-reduced-motion support"
+  ],
+  "dependencies": [],
+  "browserRequirements": ["Modern CSS transforms", "CSS custom properties", "Intersection Observer", "Pointer Events", "requestAnimationFrame"]
+}

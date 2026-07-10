@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fifty accessible, dependency-free micro-interactions built with CSS and JavaScript.">
+  <meta name="theme-color" content="#0a0b0b">
+  <meta property="og:title" content="Micro-Interactions Lab — 50 UI animations">
+  <meta property="og:description" content="Explore, replay and integrate fifty accessible UI motion patterns.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Micro-Interactions Lab — 50 UI animations</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#animations">Skip to interactions</a>
+
+  <header class="hero">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="../index.html" aria-label="Micro-Interactions Lab home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Micro-Interactions Lab
+      </a>
+      <a class="back-link" href="../index.html">Project overview <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <div class="hero-copy">
+      <p class="eyebrow">Fifty focused UI patterns</p>
+      <h1>Small motions.<br><span>Clearer interfaces.</span></h1>
+      <p class="hero-intro">A practical collection of accessible interactions ready to study, copy and adapt. No dependencies, no build step.</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="#animations">Explore interactions <span aria-hidden="true">↓</span></a>
+        <button class="text-button" id="replay-all" type="button">Replay all</button>
+      </div>
+    </div>
+
+    <div class="hero-orbit" aria-hidden="true">
+      <span class="orbit orbit-a"></span>
+      <span class="orbit orbit-b"></span>
+      <span class="orbit-core"></span>
+    </div>
+  </header>
+
+  <main id="animations">
+    <section class="toolbar" aria-label="Interaction filters">
+      <div>
+        <p class="section-kicker">The collection</p>
+        <h2>50 patterns, 5 categories</h2>
+      </div>
+      <div class="filters" role="group" aria-label="Filter by category">
+        <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="button" aria-pressed="false">Button</button>
+        <button class="filter" type="button" data-filter="feedback" aria-pressed="false">Feedback</button>
+        <button class="filter" type="button" data-filter="loading" aria-pressed="false">Loading</button>
+        <button class="filter" type="button" data-filter="text" aria-pressed="false">Text</button>
+        <button class="filter" type="button" data-filter="spatial" aria-pressed="false">Spatial</button>
+      </div>
+    </section>
+
+    <section class="demo-grid" aria-live="polite">
+      <article class="demo-card accent-lime" data-category="button">
+        <header class="card-head"><span>01</span><div><h3>Magnetic pull</h3><p>BUTTON · POINTER</p></div><button class="replay" type="button" aria-label="Replay Magnetic pull">↻</button></header>
+        <div class="stage magnetic-stage"><button class="magnetic-button" type="button"><span>Come closer</span></button></div>
+        <p class="hint">Move the pointer near the button</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="button">
+        <header class="card-head"><span>02</span><div><h3>Ink ripple</h3><p>BUTTON · CLICK</p></div><button class="replay" type="button" aria-label="Replay Ink ripple">↻</button></header>
+        <div class="stage"><button class="ripple-button" type="button">Crea ripple</button></div>
+        <p class="hint">Click different points on the surface</p>
+      </article>
+
+      <article class="demo-card accent-coral" data-category="button">
+        <header class="card-head"><span>03</span><div><h3>Liquid fill</h3><p>BUTTON · HOVER</p></div><button class="replay" type="button" aria-label="Replay Liquid fill">↻</button></header>
+        <div class="stage"><button class="liquid-button" type="button"><span>Discover</span><i aria-hidden="true"></i></button></div>
+        <p class="hint">Hover to fill the button</p>
+      </article>
+
+      <article class="demo-card accent-violet" data-category="button">
+        <header class="card-head"><span>04</span><div><h3>Menu morph</h3><p>BUTTON · TOGGLE</p></div><button class="replay" type="button" aria-label="Replay Menu morph">↻</button></header>
+        <div class="stage"><button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+        <p class="hint">Three lines transition into a close icon</p>
+      </article>
+
+      <article class="demo-card accent-amber" data-category="feedback">
+        <header class="card-head"><span>05</span><div><h3>Day / night</h3><p>FEEDBACK · TOGGLE</p></div><button class="replay" type="button" aria-label="Replay Day night">↻</button></header>
+        <div class="stage sky-stage"><button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Enable night mode"><span class="sky-stars" aria-hidden="true">✦ · ✦</span><span class="sky-body" aria-hidden="true"></span></button></div>
+        <p class="hint">The sun travels across the switch</p>
+      </article>
+
+      <article class="demo-card accent-coral" data-category="feedback">
+        <header class="card-head"><span>06</span><div><h3>Notification bell</h3><p>FEEDBACK · CLICK</p></div><button class="replay" type="button" aria-label="Replay Notification bell">↻</button></header>
+        <div class="stage"><button class="bell-button" type="button" aria-label="Mark notifications as read"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 43h30l-4-6V26a11 11 0 0 0-22 0v11z"/><path d="M27 48a5 5 0 0 0 10 0"/></svg><span>3</span></button></div>
+        <p class="hint">Click to clear the notification badge</p>
+      </article>
+
+      <article class="demo-card accent-pink" data-category="feedback">
+        <header class="card-head"><span>07</span><div><h3>Heart burst</h3><p>FEEDBACK · CLICK</p></div><button class="replay" type="button" aria-label="Replay Heart burst">↻</button></header>
+        <div class="stage"><button class="heart-button" type="button" aria-pressed="false" aria-label="Add to favorites"><span class="heart" aria-hidden="true">♥</span><span class="burst" aria-hidden="true"></span></button></div>
+        <p class="hint">Favorite feedback with a burst of energy</p>
+      </article>
+
+      <article class="demo-card accent-lime" data-category="feedback">
+        <header class="card-head"><span>08</span><div><h3>Success morph</h3><p>FEEDBACK · CLICK</p></div><button class="replay" type="button" aria-label="Replay Success morph">↻</button></header>
+        <div class="stage"><button class="success-button" type="button"><span class="success-label">Confirm</span><svg viewBox="0 0 40 40" aria-hidden="true"><path d="m11 21 6 6 13-14"/></svg></button></div>
+        <p class="hint">Confirmation collapses into a checkmark</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="feedback">
+        <header class="card-head"><span>09</span><div><h3>Floating field</h3><p>FEEDBACK · FOCUS</p></div><button class="replay" type="button" aria-label="Replay Floating field">↻</button></header>
+        <div class="stage"><label class="float-field"><input type="email" placeholder=" " autocomplete="off"><span>Email</span><i aria-hidden="true"></i></label></div>
+        <p class="hint">Focus and content transform the label</p>
+      </article>
+
+      <article class="demo-card accent-violet" data-category="feedback">
+        <header class="card-head"><span>10</span><div><h3>Elastic tooltip</h3><p>FEEDBACK · HOVER</p></div><button class="replay" type="button" aria-label="Replay Elastic tooltip">↻</button></header>
+        <div class="stage"><button class="tooltip-trigger" type="button" aria-describedby="tooltip-10">?</button><span class="tooltip" role="tooltip" id="tooltip-10">A little extra context</span></div>
+        <p class="hint">Also available from the keyboard</p>
+      </article>
+
+      <article class="demo-card accent-neutral" data-category="loading">
+        <header class="card-head"><span>11</span><div><h3>Skeleton wave</h3><p>LOADING · LOOP</p></div><button class="replay" type="button" aria-label="Replay Skeleton wave">↻</button></header>
+        <div class="stage"><div class="skeleton" aria-label="Content is loading" role="status"><span class="skeleton-avatar"></span><span class="skeleton-lines"><i></i><i></i><i></i></span></div></div>
+        <p class="hint">A subtle shimmer for stable layouts</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="loading">
+        <header class="card-head"><span>12</span><div><h3>Orbital loader</h3><p>LOADING · LOOP</p></div><button class="replay" type="button" aria-label="Replay Orbital loader">↻</button></header>
+        <div class="stage"><div class="orbital-loader" role="status" aria-label="Loading"><i></i><i></i><i></i><span></span></div></div>
+        <p class="hint">Three satellites, transform-only motion</p>
+      </article>
+
+      <article class="demo-card accent-lime" data-category="loading">
+        <header class="card-head"><span>13</span><div><h3>Progress ring</h3><p>LOADING · REPLAY</p></div><button class="replay" type="button" aria-label="Replay Progress ring">↻</button></header>
+        <div class="stage"><div class="progress-ring" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="72"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-track" cx="60" cy="60" r="50"/><circle class="ring-value" cx="60" cy="60" r="50"/></svg><strong>72<small>%</small></strong></div></div>
+        <p class="hint">An SVG stroke controlled by CSS</p>
+      </article>
+
+      <article class="demo-card accent-coral" data-category="loading">
+        <header class="card-head"><span>14</span><div><h3>Audio equalizer</h3><p>LOADING · TOGGLE</p></div><button class="replay" type="button" aria-label="Replay Audio equalizer">↻</button></header>
+        <div class="stage"><button class="equalizer" type="button" aria-pressed="true" aria-label="Pause animation"><i></i><i></i><i></i><i></i><i></i><i></i></button></div>
+        <p class="hint">Click to pause the rhythm</p>
+      </article>
+
+      <article class="demo-card accent-amber" data-category="text">
+        <header class="card-head"><span>15</span><div><h3>Word cascade</h3><p>TEXT · REVEAL</p></div><button class="replay" type="button" aria-label="Replay Word cascade">↻</button></header>
+        <div class="stage word-stage" aria-label="Design that moves"><span><i>Design</i></span><span><i>that</i></span><span><i>moves.</i></span></div>
+        <p class="hint">Each word enters in sequence</p>
+      </article>
+
+      <article class="demo-card accent-lime" data-category="text">
+        <header class="card-head"><span>16</span><div><h3>Text scramble</h3><p>TEXT · DECODE</p></div><button class="replay" type="button" aria-label="Replay Text scramble">↻</button></header>
+        <div class="stage"><strong class="scramble-text" data-text="MOTION READY">MOTION READY</strong></div>
+        <p class="hint">Random glyphs resolve into a message</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="spatial">
+        <header class="card-head"><span>17</span><div><h3>Perspective tilt</h3><p>SPATIAL · POINTER</p></div><button class="replay" type="button" aria-label="Replay Perspective tilt">↻</button></header>
+        <div class="stage tilt-stage"><div class="tilt-card" tabindex="0"><span>03</span><strong>DEPTH</strong><i aria-hidden="true"></i></div></div>
+        <p class="hint">Light and depth follow the pointer</p>
+      </article>
+
+      <article class="demo-card accent-violet" data-category="spatial">
+        <header class="card-head"><span>18</span><div><h3>Card flip</h3><p>SPATIAL · CLICK</p></div><button class="replay" type="button" aria-label="Replay Card flip">↻</button></header>
+        <div class="stage"><button class="flip-card" type="button" aria-pressed="false"><span class="flip-inner"><span class="flip-face flip-front">A</span><span class="flip-face flip-back">B</span></span></button></div>
+        <p class="hint">Two faces, one 3D rotation</p>
+      </article>
+
+      <article class="demo-card accent-coral" data-category="spatial">
+        <header class="card-head"><span>19</span><div><h3>Spring accordion</h3><p>SPATIAL · EXPAND</p></div><button class="replay" type="button" aria-label="Replay Spring accordion">↻</button></header>
+        <div class="stage accordion-stage"><div class="accordion"><button type="button" aria-expanded="false" aria-controls="answer-19"><span>What is motion design?</span><i aria-hidden="true">+</i></button><div id="answer-19"><p>It is rhythm that makes an interface easier to understand.</p></div></div></div>
+        <p class="hint">Fluid height with accessible state</p>
+      </article>
+
+      <article class="demo-card accent-pink" data-category="spatial">
+        <header class="card-head"><span>20</span><div><h3>Cursor spotlight</h3><p>SPATIAL · POINTER</p></div><button class="replay" type="button" aria-label="Replay Cursor spotlight">↻</button></header>
+        <div class="stage spotlight-stage"><div class="spotlight" tabindex="0"><span aria-hidden="true"></span><strong>FOLLOW<br>THE LIGHT</strong></div></div>
+        <p class="hint">A local gradient follows the pointer</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="button">
+        <header class="card-head"><span>21</span><div><h3>Border trace</h3><p>BUTTON · HOVER</p></div><button class="replay" type="button" aria-label="Replay Border trace">↻</button></header>
+        <div class="stage"><button class="trace-button" type="button"><span>Trace the edge</span></button></div>
+        <p class="hint">A bright line travels around the control</p>
+      </article>
+
+      <article class="demo-card accent-coral" data-category="button">
+        <header class="card-head"><span>22</span><div><h3>Split label</h3><p>BUTTON · HOVER</p></div><button class="replay" type="button" aria-label="Replay Split label">↻</button></header>
+        <div class="stage"><button class="split-button" type="button" aria-label="View project"><span aria-hidden="true">View project</span><span aria-hidden="true">View project</span></button></div>
+        <p class="hint">Two label layers exchange places</p>
+      </article>
+
+      <article class="demo-card accent-amber" data-category="button">
+        <header class="card-head"><span>23</span><div><h3>Depth press</h3><p>BUTTON · PRESS</p></div><button class="replay" type="button" aria-label="Replay Depth press">↻</button></header>
+        <div class="stage"><button class="depth-button" type="button">Press down</button></div>
+        <p class="hint">Shadow and position create physical depth</p>
+      </article>
+
+      <article class="demo-card accent-lime" data-category="button">
+        <header class="card-head"><span>24</span><div><h3>Arrow slide</h3><p>BUTTON · HOVER</p></div><button class="replay" type="button" aria-label="Replay Arrow slide">↻</button></header>
+        <div class="stage"><button class="arrow-button" type="button"><i aria-hidden="true">→</i><span>Continue</span><i aria-hidden="true">→</i></button></div>
+        <p class="hint">Direction is reinforced by a moving icon</p>
+      </article>
+
+      <article class="demo-card accent-violet" data-category="button">
+        <header class="card-head"><span>25</span><div><h3>Shine sweep</h3><p>BUTTON · HOVER</p></div><button class="replay" type="button" aria-label="Replay Shine sweep">↻</button></header>
+        <div class="stage"><button class="shine-button" type="button">Unlock access</button></div>
+        <p class="hint">A restrained highlight crosses the surface</p>
+      </article>
+
+      <article class="demo-card accent-pink" data-category="button">
+        <header class="card-head"><span>26</span><div><h3>Hold progress</h3><p>BUTTON · HOLD</p></div><button class="replay" type="button" aria-label="Replay Hold progress">↻</button></header>
+        <div class="stage"><button class="hold-button" type="button" aria-label="Press and hold to confirm"><i aria-hidden="true"></i><span>Hold to confirm</span></button></div>
+        <p class="hint">Press and hold until the progress completes</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="feedback">
+        <header class="card-head"><span>27</span><div><h3>Copy confirmation</h3><p>FEEDBACK · CLICK</p></div><button class="replay" type="button" aria-label="Replay Copy confirmation">↻</button></header>
+        <div class="stage"><div class="copy-chip"><code>#C8FF46</code><button class="copy-button" type="button" data-copy="#C8FF46"><span>Copy</span><i aria-hidden="true">✓</i></button></div></div>
+        <p class="hint">The action confirms without changing layout</p>
+      </article>
+
+      <article class="demo-card accent-lime" data-category="feedback">
+        <header class="card-head"><span>28</span><div><h3>Check toggle</h3><p>FEEDBACK · TOGGLE</p></div><button class="replay" type="button" aria-label="Replay Check toggle">↻</button></header>
+        <div class="stage"><button class="check-toggle" type="button" role="switch" aria-checked="false"><span aria-hidden="true"><i></i></span><b>Notifications</b></button></div>
+        <p class="hint">Track, thumb and check share one state</p>
+      </article>
+
+      <article class="demo-card accent-coral" data-category="feedback">
+        <header class="card-head"><span>29</span><div><h3>Toast stack</h3><p>FEEDBACK · CLICK</p></div><button class="replay" type="button" aria-label="Replay Toast stack">↻</button></header>
+        <div class="stage toast-stage"><button class="toast-launcher" type="button">Show notification</button><div class="toast-region" aria-live="polite" aria-label="Notifications"></div></div>
+        <p class="hint">New messages push the stack with spring motion</p>
+      </article>
+
+      <article class="demo-card accent-amber" data-category="feedback">
+        <header class="card-head"><span>30</span><div><h3>Rating wave</h3><p>FEEDBACK · SELECT</p></div><button class="replay" type="button" aria-label="Replay Rating wave">↻</button></header>
+        <div class="stage"><div class="rating" role="group" aria-label="Rate this interaction"><button type="button" aria-label="1 star">★</button><button type="button" aria-label="2 stars">★</button><button type="button" aria-label="3 stars">★</button><button type="button" aria-label="4 stars">★</button><button type="button" aria-label="5 stars">★</button></div></div>
+        <p class="hint">Selection travels across the stars in sequence</p>
+      </article>
+
+      <article class="demo-card accent-violet" data-category="loading">
+        <header class="card-head"><span>31</span><div><h3>Dot pulse</h3><p>LOADING · LOOP</p></div><button class="replay" type="button" aria-label="Replay Dot pulse">↻</button></header>
+        <div class="stage"><div class="dot-pulse" role="status" aria-label="Loading"><i></i><i></i><i></i></div></div>
+        <p class="hint">Three dots communicate quiet background work</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="loading">
+        <header class="card-head"><span>32</span><div><h3>Segment spinner</h3><p>LOADING · LOOP</p></div><button class="replay" type="button" aria-label="Replay Segment spinner">↻</button></header>
+        <div class="stage"><div class="segment-spinner" role="status" aria-label="Loading"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <p class="hint">Opacity steps create a lightweight rotation</p>
+      </article>
+
+      <article class="demo-card accent-pink" data-category="loading">
+        <header class="card-head"><span>33</span><div><h3>Typing bubble</h3><p>LOADING · LOOP</p></div><button class="replay" type="button" aria-label="Replay Typing bubble">↻</button></header>
+        <div class="stage"><div class="typing-bubble" role="status" aria-label="Someone is typing"><span></span><span></span><span></span></div></div>
+        <p class="hint">A familiar conversational waiting state</p>
+      </article>
+
+      <article class="demo-card accent-coral" data-category="loading">
+        <header class="card-head"><span>34</span><div><h3>Wave loader</h3><p>LOADING · LOOP</p></div><button class="replay" type="button" aria-label="Replay Wave loader">↻</button></header>
+        <div class="stage"><div class="wave-loader" role="status" aria-label="Loading"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <p class="hint">Scale and delay form a continuous wave</p>
+      </article>
+
+      <article class="demo-card accent-lime" data-category="loading">
+        <header class="card-head"><span>35</span><div><h3>Conic spinner</h3><p>LOADING · LOOP</p></div><button class="replay" type="button" aria-label="Replay Conic spinner">↻</button></header>
+        <div class="stage"><div class="conic-spinner" role="status" aria-label="Loading"><span></span></div></div>
+        <p class="hint">A masked conic gradient draws the ring</p>
+      </article>
+
+      <article class="demo-card accent-amber" data-category="loading">
+        <header class="card-head"><span>36</span><div><h3>Step loader</h3><p>LOADING · PROGRESS</p></div><button class="replay" type="button" aria-label="Replay Step loader">↻</button></header>
+        <div class="stage"><div class="step-loader" role="progressbar" aria-label="Setup progress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"><i></i><i></i><i></i><i></i><strong>Preparing</strong></div></div>
+        <p class="hint">Discrete progress moves through four stages</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="text">
+        <header class="card-head"><span>37</span><div><h3>Letter stagger</h3><p>TEXT · REVEAL</p></div><button class="replay" type="button" aria-label="Replay Letter stagger">↻</button></header>
+        <div class="stage"><strong class="letter-stagger" aria-label="Cascade"><i>C</i><i>A</i><i>S</i><i>C</i><i>A</i><i>D</i><i>E</i></strong></div>
+        <p class="hint">Individual letters arrive with a tight delay</p>
+      </article>
+
+      <article class="demo-card accent-violet" data-category="text">
+        <header class="card-head"><span>38</span><div><h3>Gradient flow</h3><p>TEXT · LOOP</p></div><button class="replay" type="button" aria-label="Replay Gradient flow">↻</button></header>
+        <div class="stage"><strong class="gradient-text">COLOR IN MOTION</strong></div>
+        <p class="hint">An animated gradient remains clipped to text</p>
+      </article>
+
+      <article class="demo-card accent-lime" data-category="text">
+        <header class="card-head"><span>39</span><div><h3>Typewriter</h3><p>TEXT · REVEAL</p></div><button class="replay" type="button" aria-label="Replay Typewriter">↻</button></header>
+        <div class="stage"><strong class="typewriter" aria-label="Make motion meaningful">Make motion meaningful.</strong></div>
+        <p class="hint">Width and caret timing reveal one line</p>
+      </article>
+
+      <article class="demo-card accent-coral" data-category="text">
+        <header class="card-head"><span>40</span><div><h3>Rolling number</h3><p>TEXT · COUNT</p></div><button class="replay" type="button" aria-label="Replay Rolling number">↻</button></header>
+        <div class="stage"><strong class="rolling-number" data-target="128">0</strong></div>
+        <p class="hint">A numeric value accelerates into place</p>
+      </article>
+
+      <article class="demo-card accent-amber" data-category="text">
+        <header class="card-head"><span>41</span><div><h3>Highlight sweep</h3><p>TEXT · REVEAL</p></div><button class="replay" type="button" aria-label="Replay Highlight sweep">↻</button></header>
+        <div class="stage"><p class="highlight-text">Motion creates <mark>clear hierarchy</mark>.</p></div>
+        <p class="hint">A marker-like surface reveals the key phrase</p>
+      </article>
+
+      <article class="demo-card accent-pink" data-category="text">
+        <header class="card-head"><span>42</span><div><h3>Blur reveal</h3><p>TEXT · REVEAL</p></div><button class="replay" type="button" aria-label="Replay Blur reveal">↻</button></header>
+        <div class="stage"><strong class="blur-reveal"><span>Focus.</span><span>Clarity.</span><span>Motion.</span></strong></div>
+        <p class="hint">Blur and distance resolve word by word</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="text">
+        <header class="card-head"><span>43</span><div><h3>Kinetic underline</h3><p>TEXT · HOVER</p></div><button class="replay" type="button" aria-label="Replay Kinetic underline">↻</button></header>
+        <div class="stage"><a class="kinetic-link" href="#animations">Explore the system<span aria-hidden="true"></span></a></div>
+        <p class="hint">The underline exits and returns from the opposite side</p>
+      </article>
+
+      <article class="demo-card accent-violet" data-category="text">
+        <header class="card-head"><span>44</span><div><h3>Word rotator</h3><p>TEXT · LOOP</p></div><button class="replay" type="button" aria-label="Replay Word rotator">↻</button></header>
+        <div class="stage"><div class="word-rotator"><span>Build with</span><strong><i>clarity</i><i>rhythm</i><i>purpose</i><i>clarity</i></strong></div></div>
+        <p class="hint">A vertical reel cycles through key values</p>
+      </article>
+
+      <article class="demo-card accent-lime" data-category="spatial">
+        <header class="card-head"><span>45</span><div><h3>Parallax layers</h3><p>SPATIAL · POINTER</p></div><button class="replay" type="button" aria-label="Replay Parallax layers">↻</button></header>
+        <div class="stage parallax-stage"><div class="parallax-layers" tabindex="0"><i></i><i></i><i></i><strong>DEPTH</strong></div></div>
+        <p class="hint">Three planes move at different pointer ratios</p>
+      </article>
+
+      <article class="demo-card accent-blue" data-category="spatial">
+        <header class="card-head"><span>46</span><div><h3>Glass glare</h3><p>SPATIAL · POINTER</p></div><button class="replay" type="button" aria-label="Replay Glass glare">↻</button></header>
+        <div class="stage"><div class="glare-card" tabindex="0"><span>GLASS / 01</span><strong>REFRACT</strong></div></div>
+        <p class="hint">A soft reflection follows local coordinates</p>
+      </article>
+
+      <article class="demo-card accent-coral" data-category="spatial">
+        <header class="card-head"><span>47</span><div><h3>Expanding dock</h3><p>SPATIAL · HOVER</p></div><button class="replay" type="button" aria-label="Replay Expanding dock">↻</button></header>
+        <div class="stage"><nav class="mini-dock" aria-label="Demo tools"><button type="button" aria-label="Home">⌂</button><button type="button" aria-label="Search">⌕</button><button type="button" aria-label="Favorite">♡</button><button type="button" aria-label="Settings">⚙</button></nav></div>
+        <p class="hint">Nearby controls respond to the focused item</p>
+      </article>
+
+      <article class="demo-card accent-violet" data-category="spatial">
+        <header class="card-head"><span>48</span><div><h3>CSS cube</h3><p>SPATIAL · LOOP</p></div><button class="replay" type="button" aria-label="Replay CSS cube">↻</button></header>
+        <div class="stage cube-stage"><div class="css-cube" aria-hidden="true"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i></div></div>
+        <p class="hint">Six planes form a rotating 3D object</p>
+      </article>
+
+      <article class="demo-card accent-amber" data-category="spatial">
+        <header class="card-head"><span>49</span><div><h3>Stack spread</h3><p>SPATIAL · HOVER</p></div><button class="replay" type="button" aria-label="Replay Stack spread">↻</button></header>
+        <div class="stage"><button class="card-stack" type="button" aria-label="Open card stack"><i></i><i></i><i></i><span>3 ITEMS</span></button></div>
+        <p class="hint">Layered cards fan out from one origin</p>
+      </article>
+
+      <article class="demo-card accent-pink" data-category="spatial">
+        <header class="card-head"><span>50</span><div><h3>Elastic drag</h3><p>SPATIAL · DRAG</p></div><button class="replay" type="button" aria-label="Replay Elastic drag">↻</button></header>
+        <div class="stage"><div class="drag-zone"><button class="drag-orb" type="button" aria-label="Drag the elastic orb"><span aria-hidden="true">↔</span></button></div></div>
+        <p class="hint">Drag the orb; release to spring back home</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with HTML, CSS and JavaScript.</p>
+    <p>50 interactions · 0 dependencies</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,154 +1,62 @@
 {
   "metadata": {
-    "title": "Web Animations Collection",
-    "subtitle": "Technical Documentation",
-    "version": "1.0.0",
-    "generatedAt": "2025-12-17T18:30:00Z",
-    "generator": "AI-Powered Documentation Pipeline",
-    "copyright": "MIT License - Free to use and modify"
+    "title": "Micro-Interactions Lab",
+    "subtitle": "User and Technical Documentation",
+    "version": "3.0.0",
+    "generatedAt": "2026-07-10T00:00:00Z",
+    "copyright": "MIT License"
   },
   "project": {
-    "name": "web-animations",
-    "description": "A collection of creative and modern web animations built with CSS and JavaScript",
-    "type": "web-animations",
-    "repository": "github.com/yourusername/web-animations",
-    "technologies": ["HTML5", "CSS3", "JavaScript ES6+", "SVG", "Three.js", "WebGL", "GLSL"]
+    "name": "micro-interactions-lab",
+    "description": "Fifty accessible UI animations built with HTML, CSS and vanilla JavaScript",
+    "type": "web-animation-library",
+    "technologies": ["HTML5", "CSS3", "Vanilla JavaScript", "SVG", "ARIA", "Intersection Observer"]
   },
   "statistics": {
-    "totalAnimations": 5,
-    "totalFiles": 15,
-    "totalLinesOfCode": 3754,
-    "complexityLevels": {
-      "simple": 1,
-      "intermediate": 2,
-      "advanced": 2
-    },
-    "technologies": {
-      "html5": 5,
-      "css3": 5,
-      "javascript": 5,
-      "svg": 1,
-      "threeJs": 2,
-      "webgl": 2
+    "totalAnimations": 50,
+    "totalSourceFiles": 10,
+    "totalLinesOfCode": 1827,
+    "dependencies": 0,
+    "categories": {
+      "button": 10,
+      "feedback": 10,
+      "loading": 10,
+      "text": 10,
+      "spatial": 10
     }
   },
   "animations": [
     {
-      "id": "password-reveal",
+      "id": "micro-interactions-lab",
       "order": 1,
-      "name": "Password Reveal Animation",
-      "complexity": "simple",
-      "linesOfCode": 321,
-      "technologies": ["HTML5", "CSS3", "Vanilla JavaScript"],
-      "summary": "Character-by-character password reveal with ease-in timing curve",
+      "name": "Micro-Interactions Lab",
+      "animationCount": 50,
+      "complexity": "simple-intermediate",
+      "linesOfCode": 1521,
+      "technologies": ["HTML5", "CSS3", "Vanilla JavaScript", "SVG", "ARIA", "Intersection Observer"],
+      "summary": "Fifty accessible, dependency-free UI animations in a responsive and filterable catalog",
       "highlights": [
-        "Zero dependencies",
-        "Smooth cubic ease-in animation",
-        "Keyboard shortcut support",
-        "Glassmorphism UI",
-        "Accessibility features"
+        "Fifty distinct interactions",
+        "Complete copyable integration panel on every card",
+        "Five category filters",
+        "Per-card and global replay",
+        "Keyboard and ARIA states",
+        "Reduced-motion support"
       ],
-      "useCases": ["Login forms", "Authentication interfaces", "Password managers"],
-      "analysisFile": "animation-analyses/01-password-reveal.json"
-    },
-    {
-      "id": "cart-animation",
-      "order": 2,
-      "name": "Cart Animation with Multi-Currency",
-      "complexity": "intermediate",
-      "linesOfCode": 466,
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Currency Conversion"],
-      "summary": "Add-to-cart animation with elastic bounce and 4 currency support",
-      "highlights": [
-        "Real-time currency conversion",
-        "Elastic bounce animations",
-        "Success state feedback",
-        "Dark theme with glassmorphism",
-        "Badge counter animations"
-      ],
-      "useCases": ["E-commerce sites", "Shopping carts", "International retail"],
-      "analysisFile": "animation-analyses/02-cart-animation.json"
-    },
-    {
-      "id": "candleshop",
-      "order": 3,
-      "name": "CandleShop - E-commerce Opening Animation",
-      "complexity": "intermediate-advanced",
-      "linesOfCode": 783,
-      "technologies": ["HTML5", "CSS3", "JavaScript", "SVG", "Intersection Observer"],
-      "summary": "Interactive SVG candle that lights up and reveals site with radial effect",
-      "highlights": [
-        "SVG candle with realistic flame",
-        "Radial reveal animation",
-        "Intersection Observer for scroll",
-        "Keyboard accessibility",
-        "Performance optimizations"
-      ],
-      "useCases": ["E-commerce intros", "Brand storytelling", "Creative portfolios"],
-      "analysisFile": "animation-analyses/03-candleshop.json"
-    },
-    {
-      "id": "touch_hero",
-      "order": 4,
-      "name": "Touch Multimedia - 3D Hand Particle Hero",
-      "complexity": "advanced",
-      "linesOfCode": 668,
-      "technologies": ["HTML5", "CSS3", "Three.js", "WebGL", "GLSL", "GLB Models"],
-      "summary": "3D hand model rendered as particles with mouse interaction and aurora effects",
-      "highlights": [
-        "5000 particle system",
-        "Mouse repulsion effects",
-        "Custom GLSL shaders",
-        "Aurora background animations",
-        "Edge geometry extraction"
-      ],
-      "useCases": ["Agency hero sections", "Tech companies", "Creative studios"],
-      "analysisFile": "animation-analyses/04-touch_hero.json"
-    },
-    {
-      "id": "website_hero",
-      "order": 5,
-      "name": "NEXUS X1 - Futuristic Product Hero",
-      "complexity": "advanced",
-      "linesOfCode": 1516,
-      "technologies": ["HTML5", "CSS3", "Three.js", "WebGL", "GSAP", "GLB Models"],
-      "summary": "Premium 3D product showcase with ACES tone mapping and dynamic color system",
-      "highlights": [
-        "ACES Filmic tone mapping",
-        "4 dynamic color schemes",
-        "GSAP intro animations",
-        "Custom cursor with glow",
-        "Loading screen with progress",
-        "Energy rings and particles"
-      ],
-      "useCases": ["Product launches", "E-commerce", "Sports brands", "Luxury retail"],
-      "analysisFile": "animation-analyses/05-website_hero.json"
+      "analysisFile": "animation-analyses/01-micro-interactions-lab.json"
     }
   ],
   "browserCompatibility": {
-    "modern": {
-      "chrome": "60+",
-      "firefox": "55+",
-      "safari": "12+",
-      "edge": "79+"
-    },
-    "advanced3D": {
-      "chrome": "90+",
-      "firefox": "88+",
-      "safari": "14.1+",
-      "edge": "90+",
-      "note": "Required for Three.js animations (touch_hero, website_hero)"
-    }
+    "chrome": "Current",
+    "edge": "Current",
+    "firefox": "Current",
+    "safari": "Current",
+    "requiredFeatures": ["CSS custom properties", "Intersection Observer", "Pointer Events", "requestAnimationFrame"]
   },
-  "generalUsage": {
-    "installation": "No installation required - all animations are standalone HTML files",
-    "usage": [
-      "Clone or download the repository",
-      "Navigate to any animation folder",
-      "Open index.html in a modern browser",
-      "Customize CSS/JS files as needed"
-    ],
-    "customization": "Each animation includes customization parameters in its analysis JSON file",
-    "integration": "Copy HTML/CSS/JS files into your project and adapt as needed"
+  "usage": {
+    "overview": "index.html",
+    "lab": "micro-interactions-lab/index.html",
+    "integrationGuide": "docs/integration-guides.md",
+    "command": "python -m http.server 8000"
   }
 }
